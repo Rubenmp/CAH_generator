@@ -1,11 +1,11 @@
 # Cards Against Humanity card generator
 
-This program generates a PDF with cards for the game [Cards Against Humanity](https://cardsagainsthumanity.com/) using files in plain text.
+This program generates a PDF with cards for the game [Cards Against Humanity](https://cardsagainsthumanity.com/) using files with plain text.
 
 
 ## Usage
 
-We will use Python3 with the following dependencies:
+It's used Python3 with the following dependencies:
 
 ```
 PyPDF2
@@ -76,4 +76,4 @@ the output file would be:
 
 
 ## License
-Creative Commons BY-NC-SA 2.0 License
+Creative Commons BY-NC-SA 2.0
