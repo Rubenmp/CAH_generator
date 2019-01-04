@@ -5,11 +5,7 @@ This program generates a PDF with cards for the game [Cards Against Humanity](ht
 
 ## Usage
 
-It's used Python3 with the following dependencies:
-
-```
-PyPDF2
-```
+It's used Python3 with the following dependencies: **PyPDF2**.
 
 File(s) with sentences must be placed inside **Input/BlackCards** and **Input/WhiteCards** respectively (one sentence per line). 
 
@@ -70,10 +66,12 @@ Ver Pantomina Full
 Falta de oxígeno al nacer
 ```
 
-the output file would be:
+the output file would contain:
 
 ![Cards](./cards.png)
 
+## Why?
+I didn't want to spent 10 minutes writing cards into a PDF and I thought that it would be a good idea to spend one day writing a program to make it automatically.
 
 ## License
 Creative Commons BY-NC-SA 2.0
