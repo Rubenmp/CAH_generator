@@ -1,6 +1,6 @@
 # Cards Against Humanity card generator
 
-This program generates a pdfs with cards for the game [Cards Against Humanity](https://cardsagainsthumanity.com/) using files in plane text.
+This program generates a pdfs with cards for the game [Cards Against Humanity](https://cardsagainsthumanity.com/) using files in plain text.
 
 
 ## Usage
@@ -21,6 +21,7 @@ $ ./main.py
 
 ## Example
 Given these files:
+
 *Input/BlackCards/example.txt*
 ```
 ... es motivo para desheredarte
