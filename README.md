@@ -1,6 +1,6 @@
 # Cards Against Humanity card generator
 
-This program generates a pdfs with cards for the game [Cards Against Humanity](https://cardsagainsthumanity.com/) using files in plain text.
+This program generates a PDF with cards for the game [Cards Against Humanity](https://cardsagainsthumanity.com/) using files in plain text.
 
 
 ## Usage
@@ -70,7 +70,7 @@ Ver Pantomina Full
 Falta de oxígeno al nacer
 ```
 
-the output file would be a pdf with:
+the output file would be:
 
 ![Cards](./cards.png)
 
