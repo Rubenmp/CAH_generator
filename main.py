@@ -9,7 +9,6 @@ import textwrap
 import io
 import os
 import datetime
-
 import sys
 
 # Avoid warning
@@ -35,8 +34,10 @@ cards_per_page = num_columns*num_rows
 width_margin = get_pdf_width()/30 # Empty space on the left
 height_margin = get_pdf_heigth()/27 # Empty space above
 block_size = (get_pdf_width()-2*width_margin)/num_columns + get_pdf_width()/142
+space_between_lines = block_size/8
 
 font_size = 12
+font_type = "Helvetica-Bold"
 
 
 def text_centered_position(index):
@@ -45,7 +46,7 @@ def text_centered_position(index):
     if (index >= 0 and index < cards_per_page):
         index_pos = (int(index/num_columns), index%num_columns)
         width = width_margin + block_size*index_pos[1] + block_size/2
-        height = height_margin + block_size*index_pos[0] + block_size/2 + block_size/25
+        height = height_margin + block_size*index_pos[0] + block_size/2 + block_size/23
         
         return (width, height)
     else:
@@ -59,7 +60,6 @@ def split_text(text):
 def write_text_to_pdf (text, index, canvas):
     "Draw text inside a pdf using canvas"
     splited_text = split_text(text)
-    space_between_lines = block_size/7
 
     for i in range(len(splited_text)):
         offset = i - len(splited_text)/2
@@ -77,8 +77,7 @@ packet = io.BytesIO()
 
 # Create a new PDF with Reportlab
 can = canvas.Canvas(packet, pagesize=A4)
-can.setFont('Helvetica-Bold', font_size)
-
+can.setFont(font_type, font_size)
 
 
 pdf_page_index = 0
@@ -99,11 +98,11 @@ for filename in os.listdir(black_cards_dir):
             card_index = 0
             pdf_page_index += 1
             can.showPage()
-            can.setFont('Helvetica-Bold', font_size)
+            can.setFont(font_type, font_size)
 
 if (card_index > 0):
     can.showPage()
-    can.setFont('Helvetica-Bold', font_size)
+    can.setFont(font_type, font_size)
     pdf_page_index += 1
     card_index = 0
     
@@ -122,16 +121,19 @@ for filename in os.listdir(white_cards_dir):
             card_index = 0
             pdf_page_index += 1
             can.showPage()
-            can.setFont('Helvetica-Bold', font_size)
+            can.setFont(font_type, font_size)
 
         
 can.showPage()
 can.save()
 
+print ("All files have been read.")
+
 # Add the watermarks and create final pdf
 new_pdf = PdfFileReader(packet)
 output = PdfFileWriter()
 
+print("PDF pages generated (out of " + str(pdf_page_index) + "):", end='', flush=True)
 for i in range(pdf_page_index):
     existing_pdf = None
     if (i < num_black_pages):
@@ -142,9 +144,13 @@ for i in range(pdf_page_index):
     page = existing_pdf.getPage(0)
     page.mergePage(new_pdf.getPage(i))
     output.addPage(page)
+    print(" " + str(i+1), end='', flush=True)
+
+print(".")
 
 # Finally, write "output" to a real file
 output_file_name = "./Output/Cards-" + str(datetime.date.today()) + ".pdf"
 outputStream = open(output_file_name, "wb")
 output.write(outputStream)
 outputStream.close()
+print("Done.")
