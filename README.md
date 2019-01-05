@@ -21,7 +21,7 @@ Given these files *Input/BlackCards/example.txt* and *Output/WhiteCards/example.
 ![Cards](./cards.png)
 
 ## Why?
-I didn't want to spent 10 minutes writing cards into a PDF then I thought that it would be a good idea to spend one day writing a program to make it automatically.
+I didn't want to waste 10 minutes writing cards into a PDF then I thought that it would be a great idea to waste one day writing a program to make it automatically.
 
 ## License
 Creative Commons BY-NC-SA 2.0
