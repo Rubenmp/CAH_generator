@@ -7,6 +7,12 @@ This program generates a PDF with cards for the game [Cards Against Humanity](ht
 
 File(s) with sentences must be placed inside **Input/BlackCards** and **Input/WhiteCards** respectively (one sentence per line). 
 
+Install program dependencies
+
+```
+$ pip3 install -r requirements.txt 
+```
+
 Run the program and see the result in **Output/**
 
 ```
@@ -14,7 +20,7 @@ $ ./main.py
 ```
 
 ## Example
-Given these files *Input/BlackCards/example.txt* and *Output/WhiteCards/example.txt* the output file would contain:
+Given these files *Input/BlackCards/example.txt* and *Output/WhiteCards/example.txt* the output file will contain:
 
 ![Cards](./cards.png)
 
