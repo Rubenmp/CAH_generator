@@ -9,13 +9,13 @@ File(s) with sentences must be placed inside **Input/BlackCards** and **Input/Wh
 
 Install program dependencies
 
-```
+```bash
 $ pip3 install -r requirements.txt 
 ```
 
 Run the program and see the result in **Output/**
 
-```
+```bash
 $ ./main.py
 ```
 
