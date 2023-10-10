@@ -4,7 +4,6 @@
 from PyPDF2 import PdfWriter, PdfReader
 from reportlab.pdfgen import canvas
 from reportlab.lib.pagesizes import A4
-from reportlab.lib import colors
 import textwrap
 import io
 import os
@@ -72,8 +71,7 @@ def write_text_to_pdf(text, index, canvas):
         if text_centered_position(index) is not None:
             width = text_centered_position(index)[0]
             height = text_centered_position(index)[1] - offset * space_between_lines
-            canvas.drawCentredString(width, height, splited_text[i]
-                                     )
+            canvas.drawCentredString(width, height, splited_text[i])
 
 
 black_cards_dir = "./Input/BlackCards/"
