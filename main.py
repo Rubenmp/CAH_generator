@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 
-from PyPDF2 import PdfFileWriter, PdfFileReader
+from PyPDF2 import PdfWriter, PdfReader
 from reportlab.pdfgen import canvas
 from reportlab.lib.pagesizes import A4
 from reportlab.lib import colors
@@ -130,20 +130,20 @@ can.save()
 print ("All files have been read.")
 
 # Add the watermarks and create final pdf
-new_pdf = PdfFileReader(packet)
-output = PdfFileWriter()
+new_pdf = PdfReader(packet)
+output = PdfWriter()
 
 print("PDF pages generated (out of " + str(pdf_page_index) + "):", end='', flush=True)
 for i in range(pdf_page_index):
     existing_pdf = None
     if (i < num_black_pages):
-        existing_pdf = PdfFileReader(open("./Input/CAH_BlankBlackCards.pdf", "rb"))
+        existing_pdf = PdfReader(open("./Input/CAH_BlankBlackCards.pdf", "rb"))
     else:
-        existing_pdf = PdfFileReader(open("./Input/CAH_BlankWhiteCards.pdf", "rb"))
+        existing_pdf = PdfReader(open("./Input/CAH_BlankWhiteCards.pdf", "rb"))
 
-    page = existing_pdf.getPage(0)
-    page.mergePage(new_pdf.getPage(i))
-    output.addPage(page)
+    page = existing_pdf.pages[0]
+    page.merge_page(new_pdf.pages[i])
+    output.add_page(page)
     print(" " + str(i+1), end='', flush=True)
 
 print(".")
