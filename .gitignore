@@ -104,6 +104,12 @@ venv.bak/
 .mypy_cache/
 
 
+# IDE
+## Intelij # https://github.com/github/gitignore/blob/main/Global/JetBrains.gitignore
+.idea
+*.iml
+*.iws
+
 # Project files
 Input/
 Output/
