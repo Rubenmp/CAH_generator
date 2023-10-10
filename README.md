@@ -15,7 +15,7 @@ $ pip3 install -r requirements.txt
 
 Run the program and see the result in **Output/**
 
-```
+```bash
 $ ./main.py
 ```
 
