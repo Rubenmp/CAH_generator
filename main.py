@@ -19,16 +19,16 @@ if not sys.warnoptions:
 
 
 # PDF Layout stuff
-def get_pdf_width_and_heigth():
+def get_pdf_width_and_height():
     return A4
 
 
 def get_pdf_width():
-    return get_pdf_width_and_heigth()[0]
+    return get_pdf_width_and_height()[0]
 
 
-def get_pdf_heigth():
-    return get_pdf_width_and_heigth()[1]
+def get_pdf_height():
+    return get_pdf_width_and_height()[1]
 
 
 num_rows = 5  # Rows of cards inside the pdf
@@ -36,7 +36,7 @@ num_columns = 4  # Number of cards per row inside the pdf
 cards_per_page = num_columns * num_rows
 
 width_margin = get_pdf_width() / 30  # Empty space on the left
-height_margin = get_pdf_heigth() / 27  # Empty space above
+height_margin = get_pdf_height() / 27  # Empty space above
 block_size = (get_pdf_width() - 2 * width_margin) / num_columns + get_pdf_width() / 142
 space_between_lines = block_size / 8
 
